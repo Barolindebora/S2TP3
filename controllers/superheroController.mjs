@@ -1,4 +1,4 @@
-import { obtenerSuperheroesPorId,obtenerTodosLosSuperheroes, buscarSuperheroesPorAtributo, obtenerSuperheroesMayoresDe30 } from "../services/superheroService.mjs";
+import { obtenerSuperheroesPorId,obtenerTodosLosSuperheroes, obtenerSuperheroesPorAtributo, obtenerSuperheroesMayoresDe30 } from "../services/superheroService.mjs";
 import { renderizarSuperheroe, renderizarListaSuperheroes } from "../views/responseview.mjs";
 
 
@@ -35,7 +35,7 @@ export async function  obtenerTodosLosSuperheroesController(req, res) {
 export async function  obtenerSuperheroesPorAtributoController(req, res) {
     try{ 
         const {atributo, valor}=req.params;
-        const superheroes =await buscarSuperheroesPorAtributo(atributo, valor);
+        const superheroes =await obtenerSuperheroesPorAtributo(atributo, valor);
         if (superheroes.length===0)
             return res.status(404).send ({mensaje:'No se encontraron superheroes con ese atributo'});
         const superheroesFormateados=renderizarListaSuperheroes(superheroes)

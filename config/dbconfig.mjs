@@ -2,7 +2,7 @@
 //punto unico de configuracion, facilita mantenimiento y escalabilidad
 import mongoose from 'mongoose';
 
-export async function  conectDB () {
+export async function  connectDB () {
 
     try {
         await mongoose.connect ('mongodb+srv://Grupo-03:grupo03@cursadanodejs.ls9ii.mongodb.net/Node-js');
