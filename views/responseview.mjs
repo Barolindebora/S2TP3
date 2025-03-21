@@ -3,7 +3,7 @@ export function renderizarSuperheroe(superheroe){
         Nombre: superheroe.nombreSuperheroe,
         "Nombre Real": superheroe.nombreReal,
         Edad: superheroe.edad,
-        "Planeta de Origen": superheroe.planetaorigen,
+        "Planeta de Origen": superheroe.planetaOrigen,
          Debilidad: superheroe.debilidad,
          Poderes: superheroe.poderes,
          Aliados: superheroe.aliados,
