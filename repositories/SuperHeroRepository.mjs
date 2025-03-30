@@ -24,6 +24,32 @@ class SuperHeroRepository extends IRepository{
         ] } );
         
     }
-}
+
+    async insertarSuperheroe(nuevoSuperheroe) {
+        const superheroe = new SuperHero(nuevoSuperheroe);
+        return await superheroe.save();
+    }
+   
+    async actualizarPorNombre(nombreSuperheroe, nuevosDatos) {
+        return await SuperHero.findOneAndUpdate(
+                { nombreSuperheroe: nombreSuperheroe },
+                nuevosDatos,
+                { new: true } // Devuelve el superhéroe actualizado
+            );
+        } 
+
+        async borrarPorNombre(nombreSuperheroe) {
+            return await SuperHero.findOneAndDelete({ nombreSuperheroe: nombreSuperheroe });
+           }
+       
+           async borrarPorId(id) {
+            return await SuperHero.findByIdAndDelete(id);
+           }
+       
+       
+        }
+    
+  
+
 
 export default new SuperHeroRepository;
